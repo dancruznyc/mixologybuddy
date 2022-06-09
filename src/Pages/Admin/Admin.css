@@ -1,0 +1,30 @@
+.admin--container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #61576b;
+}
+
+h1 {
+  color: #ebe6f0;
+  font-size: 10rem;
+}
+
+h2 {
+  color: #353338;
+  font-size: 9rem;
+}
+
+h3 {
+  color: #c93450;
+  font-size: 8rem;
+}
+
+h4 {
+  color: #a15bc9;
+  font-size: 7rem;
+}
+
+h5 {
+  color: #a622f2;
+  font-size: 6rem;
+}
