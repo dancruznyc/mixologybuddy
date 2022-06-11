@@ -4,6 +4,7 @@ function App() {
   return (
     <div className="App">
       <Admin />
+      <div>hello</div>
     </div>
   );
 }
