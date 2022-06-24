@@ -1,0 +1,23 @@
+.allrecipes--container {
+  background-color: #61576b;
+  width: calc(100vw - 15rem);
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.allrecipes--content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.allrecipes-display {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}

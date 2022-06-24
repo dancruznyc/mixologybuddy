@@ -1,0 +1,24 @@
+.recipe-thumb--container {
+  max-width: 30rem;
+  background-color: aliceblue;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: inset 0px -5px 0px 0px #cbcbcb;
+  margin: 1rem;
+}
+
+.thumbnail--container {
+  width: 100%;
+}
+
+.thumbnail--container img {
+  width: 100%;
+}
+
+.recipe-thumb--title {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 2rem 0.5rem;
+  color: #353338;
+}
