@@ -1,0 +1,18 @@
+.sidebar--container {
+  height: 100vh;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #48404f;
+  color: #ebe6f0;
+}
+
+.sidebar--container li {
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+}
+
+.sidebar--container li:hover {
+  background-color: #2f2a34;
+  cursor: pointer;
+}
