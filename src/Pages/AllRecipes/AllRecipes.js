@@ -75,6 +75,7 @@ const AllRecipes = () => {
             <RecipeThumb
               thumbnail={recipe?.strDrinkThumb}
               title={recipe?.strDrink}
+              id={recipe?.idDrink}
             />
           ))}
         </div>

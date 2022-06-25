@@ -1,0 +1,10 @@
+.recipe--container {
+  background-color: #61576b;
+  width: calc(100vw - 15rem);
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

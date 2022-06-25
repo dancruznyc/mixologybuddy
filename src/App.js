@@ -5,6 +5,7 @@ import Home from "./Pages/Home/Home";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import MyBar from "./Pages/MyBar/MyBar";
 import AllRecipes from "./Pages/AllRecipes/AllRecipes";
+import Recipe from "./Pages/Recipe/Recipe";
 
 function App() {
   useEffect(() => {}, []);
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/mybar" element={<MyBar />} />
           <Route path="/allrecipes" element={<AllRecipes />} />
+          <Route path="/recipe/:id" element={<Recipe />} />
         </Routes>
       </Router>
     </div>
