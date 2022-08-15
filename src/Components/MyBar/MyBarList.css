@@ -1,0 +1,20 @@
+.mybar-list--container {
+  height: 100%;
+  width: 80%;
+  background-color: #7e718c;
+  margin-top: 2rem;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.mybar-list--item {
+  width: 90%;
+  margin-bottom: 1rem;
+  background-color: #5d5367;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.mybar-list--item p {
+  font-size: 1.5rem;
+}

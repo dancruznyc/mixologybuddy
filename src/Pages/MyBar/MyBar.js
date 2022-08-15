@@ -1,13 +1,21 @@
 import React from "react";
+import MyBarAd from "../../Components/MyBar/MyBarAd";
+import MyBarForm from "../../Components/MyBar/MyBarForm";
+import MyBarList from "../../Components/MyBar/MyBarList";
 import "./MyBar.css";
 
 const MyBar = () => {
   return (
     <div className="mybar--container">
-      <h2>My Bar</h2>
-      <input type="text" name="" id="" placeholder="Add liqour type" />
+      <h2 className="mybar--heading">My Bar</h2>
       <div className="mybar--display">
-        <ul></ul>
+        <div className="mybar--display-left">
+          <MyBarForm />
+          <MyBarList />
+        </div>
+        <div className="mybar--display-right">
+          <MyBarAd />
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,32 @@
+.mybar-form--container {
+  width: 80%;
+  background-color: #7e718c;
+  border-radius: 1rem;
+}
+
+.mybar-form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.mybar-form input {
+  height: 3.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.mybar-form button {
+  height: 3.5rem;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  font-size: 2rem;
+}
+
+.mybar-form button:hover {
+  background-color: #bfb7c7;
+  cursor: pointer;
+}
