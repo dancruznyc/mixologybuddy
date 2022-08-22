@@ -10,19 +10,3 @@
   padding: 2rem;
   overflow: scroll;
 }
-
-.mybar-list--item {
-  margin-bottom: 2rem;
-  background-color: #5d5367;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0.3rem 0 0 #c7c6c5, 0 0 0 0.1rem rgba(49, 46, 43, 0.06);
-}
-
-.mybar-list--item p {
-  font-size: 1.5rem;
-}
-
-.brand-par {
-  margin-bottom: 1rem;
-}
