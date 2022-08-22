@@ -7,7 +7,9 @@ import "./MyBar.css";
 const MyBar = () => {
   return (
     <div className="mybar--container">
-      <h2 className="mybar--heading">My Bar</h2>
+      <div className="mybar--header">
+        <h2 className="mybar--heading">My Bar</h2>
+      </div>
       <div className="mybar--display">
         <div className="mybar--display-left">
           <MyBarForm />

@@ -1,27 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MyBarContext } from "../../Services/MyBarContext";
 import "./MyBarList.css";
+import MyBarListItem from "./MyBarListItem";
 
-const myList = [
-  { name: "Vodka", brand: "Gray Goose" },
-  { name: "Rum", brand: "Bicardi" },
-  { name: "Tequila", brand: "1500" },
-  { name: "Irish Cream", brand: "Baily's" },
-  { name: "Whiskey", brand: "Jameson" },
-  { name: "Brandy", brand: "E & J" },
-  { name: "Melon Liqour", brand: "Midori" },
-];
+// const myList = [
+//   { name: "Vodka", brand: "Gray Goose" },
+//   { name: "Rum", brand: "Bicardi" },
+//   { name: "Tequila", brand: "1500" },
+//   { name: "Irish Cream", brand: "Baily's" },
+//   { name: "Whiskey", brand: "Jameson" },
+//   { name: "Brandy", brand: "E & J" },
+//   { name: "Melon Liqour", brand: "Midori" },
+// ];
 
 const MyBarList = () => {
+  const { myDrinksList } = useContext(MyBarContext);
   return (
     <div className="mybar-list--container">
-      {myList.map((item) => {
+      {myDrinksList.map((item) => {
+        console.log(item.id);
         return (
-          <div className="mybar-list--item">
-            <p>{item.name}</p>
-            <p>{item.brand}</p>
-            <button>Remove</button>
-            <button>Edit</button>
-          </div>
+          <MyBarListItem
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            brand={item.brand}
+          />
         );
       })}
     </div>

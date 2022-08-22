@@ -2,8 +2,6 @@
   background-color: #61576b;
   width: calc(100vw - 15rem);
   height: 100vh;
-  overflow: scroll;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,13 +13,19 @@
   margin: 2rem;
 }
 
+.mybar--header {
+  height: 10%;
+}
+
 .mybar--display {
   display: flex;
   width: 100%;
+  height: 90%;
 }
 
 .mybar--display-left {
   width: 65%;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
