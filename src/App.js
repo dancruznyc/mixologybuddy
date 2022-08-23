@@ -7,6 +7,7 @@ import AllRecipes from "./Pages/AllRecipes/AllRecipes";
 import Recipe from "./Pages/Recipe/Recipe";
 import Favorites from "./Pages/Favorites/Favorites";
 import { MyBarContextProvider } from "./Services/MyBarContext";
+import MyRecipes from "./Pages/MyRecipes/MyRecipes";
 
 function App() {
   useEffect(() => {}, []);
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/mybar" element={<MyBar />} />
+            <Route path="/myrecipes" element={<MyRecipes />} />
             <Route path="/allrecipes" element={<AllRecipes />} />
             <Route path="/recipe/:id" element={<Recipe />} />
             <Route path="/favorites" element={<Favorites />} />

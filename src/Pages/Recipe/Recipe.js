@@ -7,7 +7,10 @@ const Recipe = () => {
   useEffect(() => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((res) => res.json())
-      .then((res) => setDrink(res.drinks[0]));
+      .then((res) => {
+        setDrink(res.drinks[0]);
+        console.log(res);
+      });
   }, []);
 
   const drinkName = drink.strDrink;

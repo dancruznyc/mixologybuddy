@@ -18,7 +18,13 @@
 
 .recipe-thumb--title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 2rem 0.5rem;
   color: #353338;
+}
+
+.recipe-thumb--content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

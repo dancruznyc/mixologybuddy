@@ -10,7 +10,7 @@ const AllRecipes = () => {
   const [recipesPerPage, setRecipesPerPage] = useState(9);
   const [searchQ, setSearchQ] = useState("");
   const [apiUrl, setApiUrl] = useState(
-    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"
+    "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?c=Cocktail"
   );
 
   useEffect(() => {
@@ -73,6 +73,7 @@ const AllRecipes = () => {
         <div className="allrecipes-display">
           {currentRecipes?.map((recipe) => (
             <RecipeThumb
+              key={recipe.idDrink}
               thumbnail={recipe?.strDrinkThumb}
               title={recipe?.strDrink}
               id={recipe?.idDrink}

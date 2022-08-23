@@ -27,10 +27,6 @@
   font-size: 1.5rem;
 }
 
-.brand-par {
-  margin-bottom: 1rem;
-}
-
 .open-accordian-btn {
   font-size: 2.5rem;
   display: flex;
@@ -49,7 +45,7 @@
 .control-btns.show {
   height: auto;
   max-height: 9999px;
-  /* transition: all 0.5s cubic-bezier(0, 1, 0, 1); */
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
 .control-btns button {

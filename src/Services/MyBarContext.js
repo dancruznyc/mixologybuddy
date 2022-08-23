@@ -5,6 +5,7 @@ export const MyBarContext = createContext();
 
 export const MyBarContextProvider = ({ children }) => {
   const [myDrinksList, setMyDrinksList] = useState([]);
+  const [myRecipes, setMyRecipes] = useState([]);
   function myBarLoader() {
     const list = JSON.parse(localStorage.getItem("myBarList"));
     if (list) {
@@ -26,13 +27,29 @@ export const MyBarContextProvider = ({ children }) => {
     localStorage.setItem("myBarList", JSON.stringify(newList));
   }
 
+  function getMyRecipes(ingredients) {
+    // www.thecocktaildb.com/api/json/v1/1/filter.php?i=Dry_Vermouth,Gin,Anis
+    const myIngredients = myDrinksList.map((item) => item.name).join("");
+    fetch(
+      `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${"coconut rum"}`
+    )
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }
+
   useEffect(() => {
     myBarLoader();
   }, []);
 
+  useEffect(() => {
+    if (myDrinksList) {
+      getMyRecipes();
+    }
+  }, []);
+
   return (
     <MyBarContext.Provider
-      value={{ myDrinksList, addNewDrink, myBarLoader, removeDrink }}
+      value={{ myDrinksList, myRecipes, addNewDrink, myBarLoader, removeDrink }}
     >
       {children}
     </MyBarContext.Provider>

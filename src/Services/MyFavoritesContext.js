@@ -8,7 +8,9 @@ export const MyFavoritesContextProvider = ({ children }) => {
   function addToFavorites() {}
   function removeFromFavorites() {}
   return (
-    <MyFavoritesContext.Provider value={{}}>
+    <MyFavoritesContext.Provider
+      value={{ myFavorites, addToFavorites, removeFromFavorites }}
+    >
       {children}
     </MyFavoritesContext.Provider>
   );

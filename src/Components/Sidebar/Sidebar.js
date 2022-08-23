@@ -21,8 +21,12 @@ const Sidebar = () => {
       <li>
         <Link to="/allrecipes">All Recipes</Link>
       </li>
-      <li>News</li>
-      <li>Sales</li>
+      <li>
+        <Link to="/news">News</Link>
+      </li>
+      <li>
+        <Link to="sales">Sales</Link>
+      </li>
     </ul>
   );
 };
