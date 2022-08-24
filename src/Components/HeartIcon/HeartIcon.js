@@ -1,35 +1,22 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { MyFavoritesContext } from "../../Services/MyFavoritesContext";
 import "./HeartIcon.css";
 
-class HeartIcon extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLiked: props.isLiked,
-    };
-    this.likeClicked = this.likeClicked.bind(this);
+const HeartIcon = ({ recipeId }) => {
+  const [isLiked, setIsLiked] = useState(false);
+  const { addToFavorites } = useContext(MyFavoritesContext);
+
+  function favoriteClicked() {
+    setIsLiked(!isLiked);
+    addToFavorites(recipeId);
   }
 
-  likeClicked() {
-    this.setState({ isLiked: !this.state.isLiked });
-    if (!!this.props.onHeartClick) {
-      this.props.onHeartClick();
-    }
-  }
-
-  render() {
-    const { isLiked } = this.state;
-    const likeClass = isLiked ? "is-active" : "";
-    return (
-      <div className="stage">
-        <div className={`heart ${likeClass}`} onClick={this.likeClicked}></div>
-      </div>
-    );
-  }
-}
-
-HeartIcon.defaultProps = {
-  isLiked: false,
+  const likeClass = isLiked ? "is-active" : "";
+  return (
+    <div className="stage">
+      <div className={`heart ${likeClass}`} onClick={favoriteClicked}></div>
+    </div>
+  );
 };
 
 export default HeartIcon;

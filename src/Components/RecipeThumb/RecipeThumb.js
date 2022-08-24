@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import HeartIcon from "../HeartIcon/HeartIcon";
 
 const RecipeThumb = ({ thumbnail, title, id }) => {
-  const [isLiked, setIsLiked] = useState(false);
-  function addToFavorites() {
-    setIsLiked(!isLiked);
-  }
+  // const [isLiked, setIsLiked] = useState(false);
+  // function addToFavorites() {
+  //   setIsLiked(!isLiked);
+  // }
 
   return (
     <div className="recipe-thumb--container">
@@ -19,7 +19,11 @@ const RecipeThumb = ({ thumbnail, title, id }) => {
       <div className="recipe-thumb--content">
         <h3 className="recipe-thumb--title">{title}</h3>
         <div className="heart-container">
-          <HeartIcon isLiked={isLiked} onHeartClick={addToFavorites} />
+          <HeartIcon
+            // isLiked={isLiked}
+            // onHeartClick={addToFavorites}
+            recipeId={id}
+          />
         </div>
       </div>
     </div>

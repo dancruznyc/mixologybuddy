@@ -17,14 +17,17 @@
 }
 
 .recipe-thumb--title {
+  width: max-content;
   text-align: center;
-  font-size: 2rem;
-  padding: 2rem 0.5rem;
+  font-size: 140%;
+  font-weight: bold;
   color: #353338;
 }
 
 .recipe-thumb--content {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 0 1rem;
 }

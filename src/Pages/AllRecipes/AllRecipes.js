@@ -73,7 +73,7 @@ const AllRecipes = () => {
         <div className="allrecipes-display">
           {currentRecipes?.map((recipe) => (
             <RecipeThumb
-              key={recipe.idDrink}
+              key={recipe?.idDrink}
               thumbnail={recipe?.strDrinkThumb}
               title={recipe?.strDrink}
               id={recipe?.idDrink}
