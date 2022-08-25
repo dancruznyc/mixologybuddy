@@ -15,6 +15,11 @@
   background-position: -1400px 0;
 }
 
+.heart.is-favorited {
+  transition-duration: 0s;
+  background-position: -1400px 0;
+}
+
 /* .stage {
     position: fixed;
     top: 50%;

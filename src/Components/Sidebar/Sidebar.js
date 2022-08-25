@@ -1,6 +1,12 @@
 import React from "react";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
+import { MdLocalBar } from "react-icons/md";
+import { FaHeart } from "react-icons/fa";
+import { BiNews } from "react-icons/bi";
+import { TbListSearch } from "react-icons/tb";
+import { BsListCheck } from "react-icons/bs";
+import { GiShop } from "react-icons/gi";
 
 const Sidebar = () => {
   return (
@@ -9,23 +15,36 @@ const Sidebar = () => {
         <Link to="/">MixologyBuddy</Link>
       </li>
       <li>
-        <Link to="/mybar">My Bar</Link>
+        <Link to="/mybar">
+          <MdLocalBar /> <span className="list-span"> My Bar</span>
+        </Link>
+      </li>
+
+      <li>
+        <Link to="/myrecipes">
+          <BsListCheck /> <span className="list-span">My Recipes</span>
+        </Link>
       </li>
       <li>
-        {" "}
-        <Link to="/favorites">Favorites</Link>
+        <Link to="/allrecipes">
+          <TbListSearch /> <span className="list-span">All Recipes</span>
+        </Link>
       </li>
       <li>
-        <Link to="/myrecipes">My Recipes</Link>
+        <Link to="/favorites">
+          <FaHeart />
+          <span className="list-span"> Favorites</span>
+        </Link>
       </li>
       <li>
-        <Link to="/allrecipes">All Recipes</Link>
+        <Link to="/news">
+          <BiNews /> <span className="list-span">News </span>
+        </Link>
       </li>
       <li>
-        <Link to="/news">News</Link>
-      </li>
-      <li>
-        <Link to="sales">Sales</Link>
+        <Link to="sales">
+          <GiShop /> <span className="list-span"> Sales</span>
+        </Link>
       </li>
     </ul>
   );

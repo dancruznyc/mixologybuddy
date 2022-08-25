@@ -6,8 +6,10 @@ import MyBar from "./Pages/MyBar/MyBar";
 import AllRecipes from "./Pages/AllRecipes/AllRecipes";
 import Recipe from "./Pages/Recipe/Recipe";
 import Favorites from "./Pages/Favorites/Favorites";
-import { MyBarContextProvider } from "./Services/MyBarContext";
 import MyRecipes from "./Pages/MyRecipes/MyRecipes";
+import News from "./Pages/News/News";
+import Sales from "./Pages/Sales/Sales";
+import { MyBarContextProvider } from "./Services/MyBarContext";
 import { MyFavoritesContextProvider } from "./Services/MyFavoritesContext";
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
               <Route path="/allrecipes" element={<AllRecipes />} />
               <Route path="/recipe/:id" element={<Recipe />} />
               <Route path="/favorites" element={<Favorites />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/sales" element={<Sales />} />
             </Routes>
           </Router>
         </div>

@@ -54,3 +54,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.name-par {
+  color: white;
+}
+
+.brand-par {
+  color: darkgray;
+}

@@ -23,4 +23,10 @@
   width: 100%;
   display: inline-block;
   padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.list-span {
+  margin-left: 1rem;
 }

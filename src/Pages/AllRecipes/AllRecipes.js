@@ -20,7 +20,25 @@ const AllRecipes = () => {
         console.log(res);
         setRecipes(res.drinks);
       });
+  }, []);
+
+  useEffect(() => {
+    updateRecipes();
   }, [setApiUrl, searchQ]);
+
+  function updateRecipes() {
+    if (
+      apiUrl !==
+      "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?c=Cocktail"
+    ) {
+      fetch(`${apiUrl}${searchQ}`)
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          setRecipes(res.drinks);
+        });
+    }
+  }
 
   // Get Current Posts
   const indexOfLastRecipe = currentPage * recipesPerPage;
@@ -49,7 +67,7 @@ const AllRecipes = () => {
           <select onChange={changeUrl}>
             <option
               value={
-                "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"
+                "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?c=Cocktail"
               }
             >
               All Recipes
@@ -71,14 +89,15 @@ const AllRecipes = () => {
           </select>
         </div>
         <div className="allrecipes-display">
-          {currentRecipes?.map((recipe) => (
-            <RecipeThumb
-              key={recipe?.idDrink}
-              thumbnail={recipe?.strDrinkThumb}
-              title={recipe?.strDrink}
-              id={recipe?.idDrink}
-            />
-          ))}
+          {currentRecipes &&
+            currentRecipes?.map((recipe) => (
+              <RecipeThumb
+                key={recipe?.idDrink}
+                thumbnail={recipe?.strDrinkThumb}
+                title={recipe?.strDrink}
+                id={recipe?.idDrink}
+              />
+            ))}
         </div>
         <Pagination
           recipesPerPage={recipesPerPage}

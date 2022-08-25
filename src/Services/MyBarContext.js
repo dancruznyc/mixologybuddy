@@ -31,7 +31,7 @@ export const MyBarContextProvider = ({ children }) => {
     // www.thecocktaildb.com/api/json/v1/1/filter.php?i=Dry_Vermouth,Gin,Anis
     const myIngredients = myDrinksList.map((item) => item.name).join("");
     fetch(
-      `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${"coconut rum"}`
+      `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=${"alcoholic"}`
     )
       .then((res) => res.json())
       .then((res) => console.log(res));

@@ -5,16 +5,29 @@ export const MyFavoritesContext = createContext();
 export const MyFavoritesContextProvider = ({ children }) => {
   const [myFavorites, setMyFavorites] = useState([]);
   const [myFavoritesThumbs, setMyFavoritesThumbs] = useState([]);
-  function loadFavorites() {}
+  function loadFavorites() {
+    const favoritesList = JSON.parse(localStorage.getItem("myFavoriteDrinks"));
+    if (favoritesList) {
+      setMyFavorites(favoritesList);
+    }
+  }
   function addToFavorites(recipeId) {
     if (myFavorites.includes(recipeId)) {
       const newFavoritesList = myFavorites.filter((id) => id !== recipeId);
       setMyFavorites(newFavoritesList);
       console.log(newFavoritesList);
+      localStorage.setItem(
+        "myFavoriteDrinks",
+        JSON.stringify(newFavoritesList)
+      );
     } else {
       const newFavoritesList = [...myFavorites, recipeId];
       setMyFavorites(newFavoritesList);
       console.log(newFavoritesList);
+      localStorage.setItem(
+        "myFavoriteDrinks",
+        JSON.stringify(newFavoritesList)
+      );
     }
   }
 
@@ -34,6 +47,10 @@ export const MyFavoritesContextProvider = ({ children }) => {
       console.log(res);
     });
   }, [myFavorites]);
+
+  useEffect(() => {
+    loadFavorites();
+  }, []);
 
   return (
     <MyFavoritesContext.Provider
