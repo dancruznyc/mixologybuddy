@@ -19,6 +19,11 @@
   border: none;
 }
 
+.ingredients-select {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
 .mybar-form button {
   height: 3.5rem;
   border-radius: 5px;

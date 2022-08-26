@@ -1,11 +1,25 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { MyBarContext } from "../../Services/MyBarContext";
 import "./MyBarForm.css";
+import Select from "react-select";
 
 const MyBarForm = () => {
   const [drinkName, setDrinkName] = useState("");
   const [brandName, setBrandName] = useState("");
+  const [ingredients, setIngredients] = useState([]);
   const { addNewDrink } = useContext(MyBarContext);
+
+  function getIngredients() {
+    fetch("https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list")
+      .then((res) => res.json())
+      .then((res) => {
+        const ingredientsArray = res.drinks.map((item) => {
+          return { value: item.strIngredient1, label: item.strIngredient1 };
+        });
+        setIngredients(ingredientsArray);
+        console.log(ingredientsArray);
+      });
+  }
 
   function addToBar(e) {
     e.preventDefault();
@@ -15,19 +29,23 @@ const MyBarForm = () => {
     setBrandName("");
   }
   function updateDrinkName(e) {
-    setDrinkName(e.target.value);
+    setDrinkName(e.value);
   }
   function updateBrandName(e) {
     setBrandName(e.target.value);
   }
+
+  useEffect(() => {
+    getIngredients();
+  }, []);
   return (
     <div className="mybar-form--container">
       <form action="" className="mybar-form" onSubmit={addToBar}>
-        <input
-          type="text"
-          placeholder="Enter drink name..."
+        <Select
+          options={ingredients}
           onChange={updateDrinkName}
-          value={drinkName}
+          className={"ingredients-select"}
+          placeholder={"Enter contents of your bar..."}
         />
         <input
           type="text"

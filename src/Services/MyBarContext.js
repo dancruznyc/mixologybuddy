@@ -6,6 +6,7 @@ export const MyBarContext = createContext();
 export const MyBarContextProvider = ({ children }) => {
   const [myDrinksList, setMyDrinksList] = useState([]);
   const [myRecipes, setMyRecipes] = useState([]);
+  const [allDrinkRecipes, setAllDrinkRecipes] = useState([]);
   function myBarLoader() {
     const list = JSON.parse(localStorage.getItem("myBarList"));
     if (list) {
@@ -27,14 +28,18 @@ export const MyBarContextProvider = ({ children }) => {
     localStorage.setItem("myBarList", JSON.stringify(newList));
   }
 
-  function getMyRecipes(ingredients) {
+  function getAllRecipes(ingredients) {
     // www.thecocktaildb.com/api/json/v1/1/filter.php?i=Dry_Vermouth,Gin,Anis
     const myIngredients = myDrinksList.map((item) => item.name).join("");
     fetch(
       `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=${"alcoholic"}`
     )
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => setAllDrinkRecipes(res));
+  }
+
+  function getMyRecipes() {
+    console.log(allDrinkRecipes);
   }
 
   useEffect(() => {
@@ -43,9 +48,13 @@ export const MyBarContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (myDrinksList) {
-      getMyRecipes();
+      getAllRecipes();
     }
   }, []);
+
+  useEffect(() => {
+    getMyRecipes();
+  }, [myDrinksList]);
 
   return (
     <MyBarContext.Provider
