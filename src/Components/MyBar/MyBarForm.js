@@ -6,20 +6,8 @@ import Select from "react-select";
 const MyBarForm = () => {
   const [drinkName, setDrinkName] = useState("");
   const [brandName, setBrandName] = useState("");
-  const [ingredients, setIngredients] = useState([]);
-  const { addNewDrink } = useContext(MyBarContext);
 
-  function getIngredients() {
-    fetch("https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list")
-      .then((res) => res.json())
-      .then((res) => {
-        const ingredientsArray = res.drinks.map((item) => {
-          return { value: item.strIngredient1, label: item.strIngredient1 };
-        });
-        setIngredients(ingredientsArray);
-        console.log(ingredientsArray);
-      });
-  }
+  const { addNewDrink, ingredients } = useContext(MyBarContext);
 
   function addToBar(e) {
     e.preventDefault();
@@ -35,9 +23,6 @@ const MyBarForm = () => {
     setBrandName(e.target.value);
   }
 
-  useEffect(() => {
-    getIngredients();
-  }, []);
   return (
     <div className="mybar-form--container">
       <form action="" className="mybar-form" onSubmit={addToBar}>

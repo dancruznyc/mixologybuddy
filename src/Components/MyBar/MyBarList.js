@@ -14,11 +14,10 @@ import MyBarListItem from "./MyBarListItem";
 // ];
 
 const MyBarList = () => {
-  const { myDrinksList } = useContext(MyBarContext);
+  const { myBarContents } = useContext(MyBarContext);
   return (
     <div className="mybar-list--container">
-      {myDrinksList.map((item) => {
-        console.log(item.id);
+      {myBarContents.map((item) => {
         return (
           <MyBarListItem
             key={item.id}
