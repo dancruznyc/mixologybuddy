@@ -154,7 +154,7 @@ export const MyBarContextProvider = ({ children }) => {
         ingredients,
         filteredDrinksList,
         myBarContents,
-        myRecipes,
+        getMyRecipes,
         drinksPlusIngredients,
         addNewDrink,
         myBarLoader,
