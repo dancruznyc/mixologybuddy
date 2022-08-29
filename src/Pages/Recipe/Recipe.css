@@ -8,3 +8,11 @@
   flex-direction: column;
   align-items: center;
 }
+
+.recipe-img--container {
+  width: 30rem;
+}
+
+.recipe-img--container img {
+  width: 100%;
+}

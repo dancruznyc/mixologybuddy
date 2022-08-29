@@ -73,6 +73,7 @@ export const MyBarContextProvider = ({ children }) => {
                 allIngredients.push(drink.drinks[0][key]);
               }
             }
+
             return {
               idDrink: drink.drinks[0].idDrink,
               strDrink: drink.drinks[0].strDrink,
@@ -154,6 +155,7 @@ export const MyBarContextProvider = ({ children }) => {
         ingredients,
         filteredDrinksList,
         myBarContents,
+        allDrinkRecipes,
         getMyRecipes,
         drinksPlusIngredients,
         addNewDrink,
