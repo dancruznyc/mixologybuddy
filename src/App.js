@@ -13,7 +13,6 @@ import { MyBarContextProvider } from "./Services/MyBarContext";
 import { MyFavoritesContextProvider } from "./Services/MyFavoritesContext";
 
 function App() {
-  useEffect(() => {}, []);
   return (
     <MyBarContextProvider>
       <MyFavoritesContextProvider>

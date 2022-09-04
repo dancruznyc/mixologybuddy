@@ -9,6 +9,7 @@
 
 .sidebar--container li {
   font-size: 1.6rem;
+  display: flex;
 }
 
 .sidebar--container li:hover {
