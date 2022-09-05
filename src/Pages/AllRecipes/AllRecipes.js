@@ -65,6 +65,7 @@ const AllRecipes = () => {
   return (
     <div className="allrecipes--container">
       <div className="allrecipes--content">
+        <h1 className="allrecipes--title">Search All Recipes</h1>
         <div className="allrecipes-header">
           <input type="text" onChange={changeSearchQ} />
           <select onChange={changeUrl}>

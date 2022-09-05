@@ -1,4 +1,9 @@
 .footer--container {
-height: 25rem;
-background-color: white;
+  height: 10rem;
+  background-color: white;
+}
+
+.footer--left {
+  background-color: #61576b;
+  height: 100%;
 }

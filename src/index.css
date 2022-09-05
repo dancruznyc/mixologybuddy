@@ -18,3 +18,12 @@ html {
 .App {
   display: flex;
 }
+
+.app--main-content {
+  overflow: auto;
+  height: 100%;
+}
+
+/* .app-sidebar--container {
+  position: relative;
+} */

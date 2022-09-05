@@ -11,6 +11,7 @@ import News from "./Pages/News/News";
 import Sales from "./Pages/Sales/Sales";
 import { MyBarContextProvider } from "./Services/MyBarContext";
 import { MyFavoritesContextProvider } from "./Services/MyFavoritesContext";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -18,17 +19,22 @@ function App() {
       <MyFavoritesContextProvider>
         <div className="App">
           <Router>
-            <Sidebar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/mybar" element={<MyBar />} />
-              <Route path="/myrecipes" element={<MyRecipes />} />
-              <Route path="/allrecipes" element={<AllRecipes />} />
-              <Route path="/recipe/:id" element={<Recipe />} />
-              <Route path="/favorites" element={<Favorites />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/sales" element={<Sales />} />
-            </Routes>
+            <div className="app-sidebar--container">
+              <Sidebar />
+            </div>
+            <div className="app--main-content">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/mybar" element={<MyBar />} />
+                <Route path="/myrecipes" element={<MyRecipes />} />
+                <Route path="/allrecipes" element={<AllRecipes />} />
+                <Route path="/recipe/:id" element={<Recipe />} />
+                <Route path="/favorites" element={<Favorites />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/sales" element={<Sales />} />
+              </Routes>
+              <Footer />
+            </div>
           </Router>
         </div>
       </MyFavoritesContextProvider>

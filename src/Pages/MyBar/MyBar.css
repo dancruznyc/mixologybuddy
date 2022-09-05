@@ -2,19 +2,24 @@
   background-color: #61576b;
   width: calc(100vw - 15rem);
   height: 100vh;
+}
+
+.mybar--margin-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.mybar--heading {
-  align-self: flex-start;
-  font-size: 4rem;
-  margin: 2rem;
+  height: 100%;
 }
 
 .mybar--header {
   height: 10%;
+  width: 92.5%;
+  margin-bottom: 2rem;
+}
+
+.mybar--heading {
+  font-size: 4rem;
+  margin: 2rem;
 }
 
 .mybar--display {
