@@ -1,0 +1,9 @@
+.news--container {
+  background-color: #61576b;
+  width: calc(100vw - 15rem);
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+}

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import AdPlaceholder from "../../Components/AdPlaceholder/AdPlaceholder";
 import "./Recipe.css";
+import { FaCocktail } from "react-icons/fa";
 
 const Recipe = () => {
   console.log("hello");
@@ -85,13 +87,21 @@ const Recipe = () => {
 
   return (
     <div className="recipe--container">
-      <h1>{drinkName}</h1>
-      <div className="recipe-img--container">
-        <img src={drinkImg} alt={"cocktail"} />
-      </div>
-      <ul className="recipe-ingredients">{ingregientsAndMeasurements}</ul>
+      <div className="recipe-display--left">
+        <h1 className="recipe--title">
+          <FaCocktail />
+          {drinkName}
+        </h1>
+        <div className="recipe-img--container">
+          <img src={drinkImg} alt={"cocktail"} />
+        </div>
+        <ul className="recipe-ingredients">{ingregientsAndMeasurements}</ul>
 
-      <p>{drinkInstructions}</p>
+        <p className="recipe-instructions">{drinkInstructions}</p>
+      </div>
+      <div className="recipe-display--right">
+        <AdPlaceholder />
+      </div>
     </div>
   );
 };
