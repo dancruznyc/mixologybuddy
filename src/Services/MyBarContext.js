@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { v4 } from "uuid";
+const apiKey = process.env.REACT_APP_API_KEY;
 
 export const MyBarContext = createContext();
 
@@ -12,7 +13,7 @@ export const MyBarContextProvider = ({ children }) => {
 
   const [ingredients, setIngredients] = useState([]);
   function getIngredients() {
-    fetch("https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list")
+    fetch(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/list.php?i=list`)
       .then((res) => res.json())
       .then((res) => {
         const ingredientsArray = res.drinks.map((item) => {
@@ -56,7 +57,7 @@ export const MyBarContextProvider = ({ children }) => {
     // www.thecocktaildb.com/api/json/v1/1/filter.php?i=Dry_Vermouth,Gin,Anis
     const myIngredients = myBarContents.map((item) => item.name).join("");
     fetch(
-      `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=${"alcoholic"}`
+      `https://www.thecocktaildb.com/api/json/v2/${apiKey}/filter.php?a=${"alcoholic"}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -97,7 +98,7 @@ export const MyBarContextProvider = ({ children }) => {
     // data.forEach((item) => console.log(item));
     const allDrinkData = data.map(async (drink) => {
       return await fetch(
-        `https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${drink.idDrink}`
+        `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${drink.idDrink}`
       ).then((res) => res.json());
     });
 

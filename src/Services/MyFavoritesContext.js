@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+const apiKey = process.env.REACT_APP_API_KEY;
 
 export const MyFavoritesContext = createContext();
 
@@ -34,7 +35,7 @@ export const MyFavoritesContextProvider = ({ children }) => {
   async function getFavoriteThumbs() {
     const newThumbs = myFavorites.map(async (fave) => {
       return await fetch(
-        `https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${fave}`
+        `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${fave}`
       ).then((res) => res.json());
     });
 

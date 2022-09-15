@@ -34,3 +34,10 @@
 .mobile-icons {
   margin-right: 1.4rem;
 }
+.mobile-icons svg {
+  cursor: pointer;
+}
+
+.social-icons svg {
+  cursor: pointer;
+}

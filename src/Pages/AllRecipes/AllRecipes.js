@@ -4,6 +4,8 @@ import RecipeThumb from "../../Components/RecipeThumb/RecipeThumb";
 import Pagination from "../../Components/Pagination/Pagination";
 import { MyBarContext } from "../../Services/MyBarContext";
 
+const apiKey = process.env.REACT_APP_API_KEY;
+
 const AllRecipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -11,8 +13,10 @@ const AllRecipes = () => {
   const [recipesPerPage, setRecipesPerPage] = useState(18);
   const [searchQ, setSearchQ] = useState("");
   const [apiUrl, setApiUrl] = useState(
-    "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=alcoholic"
+    `https://www.thecocktaildb.com/api/json/v2/${apiKey}/filter.php?a=alcoholic`
   );
+
+  console.log(apiKey);
 
   const { allDrinkRecipes } = useContext(MyBarContext);
 
@@ -32,7 +36,7 @@ const AllRecipes = () => {
   function updateRecipes() {
     if (
       apiUrl !==
-      "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=alcoholic"
+      `https://www.thecocktaildb.com/api/json/v2/${apiKey}/filter.php?a=alcoholic`
     ) {
       fetch(`${apiUrl}${searchQ}`)
         .then((res) => res.json())
@@ -70,16 +74,12 @@ const AllRecipes = () => {
           <input type="text" onChange={changeSearchQ} />
           <select onChange={changeUrl}>
             <option
-              value={
-                "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=alcoholic"
-              }
+              value={`https://www.thecocktaildb.com/api/json/v2/${apiKey}/filter.php?a=alcoholic`}
             >
               All Recipes
             </option>
             <option
-              value={
-                "https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s="
-              }
+              value={`https://www.thecocktaildb.com/api/json/v2/${apiKey}/search.php?s=`}
             >
               Search by Name
             </option>
