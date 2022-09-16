@@ -13,7 +13,7 @@
 
 .mybar--header {
   height: 10%;
-  width: 92.5%;
+  width: 100%;
   margin-bottom: 2rem;
 }
 
@@ -31,6 +31,7 @@
 
 .mybar--display-left {
   max-height: 100%;
+  width: 40rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

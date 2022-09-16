@@ -7,7 +7,10 @@ const Favorites = () => {
   const { myFavoritesThumbs } = useContext(MyFavoritesContext);
   return (
     <div className="favorites--container">
-      <h1>My Favorites</h1>
+      <div className="favorites--header">
+        <h1 className="favorites--heading">My Favorites</h1>
+      </div>
+
       <div className="allrecipes-display">
         {myFavoritesThumbs?.map((recipe) => (
           <RecipeThumb

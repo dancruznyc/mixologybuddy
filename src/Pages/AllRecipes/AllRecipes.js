@@ -70,7 +70,9 @@ const AllRecipes = () => {
   return (
     <div className="allrecipes--container">
       <div className="allrecipes--content">
-        <h1 className="allrecipes--title">All Recipes</h1>
+        <div className="allrecipes--header">
+          <h1 className="allrecipes--heading">All Recipes</h1>
+        </div>
         <form className="allrecipes--search" onSubmit={allRecipeSearch}>
           <input
             type="text"
@@ -112,6 +114,7 @@ const AllRecipes = () => {
           recipesPerPage={recipesPerPage}
           totalRecipes={recipes?.length}
           paginate={paginate}
+          currentPage={currentPage}
         />
       </div>
     </div>

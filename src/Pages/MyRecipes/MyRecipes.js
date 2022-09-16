@@ -27,7 +27,9 @@ const MyRecipes = () => {
   }, []);
   return (
     <div className="my-recipes--container">
-      <h2>My Recipes</h2>
+      <div className="myrecipe--header">
+        <h2 className="myrecipe--heading">My Recipes</h2>
+      </div>
       <div className="allrecipes-display">
         {currentRecipes?.map((recipe) => (
           <RecipeThumb
@@ -42,6 +44,7 @@ const MyRecipes = () => {
         recipesPerPage={recipesPerPage}
         totalRecipes={filteredDrinksList?.length}
         paginate={paginate}
+        currentPage={currentPage}
       />
     </div>
   );

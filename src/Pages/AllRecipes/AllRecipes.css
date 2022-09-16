@@ -9,10 +9,27 @@
   align-items: center;
 }
 
+.allrecipes--header {
+  height: 10%;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.allrecipes--heading {
+  font-size: 4rem;
+  margin: 2rem;
+}
+
 .allrecipes--content {
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.allrecipes-display {
+  display: flex;
+  justify-content: center;
 }
 
 .allrecipes--search {
