@@ -5,6 +5,7 @@
   flex-direction: column;
   background-color: #48404f;
   color: #ebe6f0;
+  position: fixed;
 }
 
 .sidebar--container li {

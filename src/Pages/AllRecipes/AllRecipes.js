@@ -16,8 +16,6 @@ const AllRecipes = () => {
     `https://www.thecocktaildb.com/api/json/v2/${apiKey}/filter.php?a=alcoholic`
   );
 
-  console.log(apiKey);
-
   const { allDrinkRecipes } = useContext(MyBarContext);
 
   useEffect(() => {
@@ -41,7 +39,6 @@ const AllRecipes = () => {
       fetch(`${apiUrl}${searchQ}`)
         .then((res) => res.json())
         .then((res) => {
-          console.log(res);
           setRecipes(res.drinks);
         });
     }
@@ -66,12 +63,20 @@ const AllRecipes = () => {
     setSearchQ(e.target.value);
   }
 
+  function allRecipeSearch(e) {
+    e.preventDefault();
+  }
+
   return (
     <div className="allrecipes--container">
       <div className="allrecipes--content">
-        <h1 className="allrecipes--title">Search All Recipes</h1>
-        <div className="allrecipes-header">
-          <input type="text" onChange={changeSearchQ} />
+        <h1 className="allrecipes--title">All Recipes</h1>
+        <form className="allrecipes--search" onSubmit={allRecipeSearch}>
+          <input
+            type="text"
+            onChange={changeSearchQ}
+            placeholder={"Search all recipes..."}
+          />
           <select onChange={changeUrl}>
             <option
               value={`https://www.thecocktaildb.com/api/json/v2/${apiKey}/filter.php?a=alcoholic`}
@@ -91,7 +96,7 @@ const AllRecipes = () => {
               Search by Ingredient
             </option>
           </select>
-        </div>
+        </form>
         <div className="allrecipes-display">
           {currentRecipes &&
             currentRecipes?.map((recipe) => (
