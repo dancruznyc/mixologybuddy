@@ -12,6 +12,7 @@ import Sales from "./Pages/Sales/Sales";
 import { MyBarContextProvider } from "./Services/MyBarContext";
 import { MyFavoritesContextProvider } from "./Services/MyFavoritesContext";
 import Footer from "./Components/Footer/Footer";
+import ContentWrapper from "./Components/ContentWrapper/ContentWrapper";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <div className="app-sidebar--container">
               <Sidebar />
             </div>
-            <div className="app--main-content">
+            <ContentWrapper className="app--main-content">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/mybar" element={<MyBar />} />
@@ -34,7 +35,7 @@ function App() {
                 <Route path="/sales" element={<Sales />} />
               </Routes>
               <Footer />
-            </div>
+            </ContentWrapper>
           </Router>
         </div>
       </MyFavoritesContextProvider>
