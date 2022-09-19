@@ -12,16 +12,17 @@ const MyRecipes = () => {
   // Get Current Posts
   const indexOfLastRecipe = currentPage * recipesPerPage;
   const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
+  console.log(filteredDrinksList, "line 15");
   const currentRecipes = filteredDrinksList.slice(
     indexOfFirstRecipe,
     indexOfLastRecipe
   );
+  console.log(filteredDrinksList, "line 20");
 
   //change page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
   useEffect(() => {
     getMyRecipes();
   }, []);
@@ -42,7 +43,7 @@ const MyRecipes = () => {
       </div>
       <Pagination
         recipesPerPage={recipesPerPage}
-        totalRecipes={filteredDrinksList?.length}
+        totalRecipes={filteredDrinksList.length}
         paginate={paginate}
         currentPage={currentPage}
       />

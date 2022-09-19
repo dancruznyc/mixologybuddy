@@ -17,7 +17,6 @@ const Pagination = ({
     <nav className="pagination-nav">
       <ul className={`pagination-list`}>
         {pageNumbers.map((number) => {
-          console.log(currentPage);
           if (currentPage === number) isActive = "active";
           else isActive = "";
           return (

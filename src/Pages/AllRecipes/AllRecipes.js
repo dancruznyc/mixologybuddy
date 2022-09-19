@@ -3,6 +3,7 @@ import "./AllRecipes.css";
 import RecipeThumb from "../../Components/RecipeThumb/RecipeThumb";
 import Pagination from "../../Components/Pagination/Pagination";
 import { MyBarContext } from "../../Services/MyBarContext";
+import RecipePlaceHolder from "../../Components/RecipePlaceHolder/RecipePlaceHolder";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -19,11 +20,13 @@ const AllRecipes = () => {
   const { allDrinkRecipes } = useContext(MyBarContext);
 
   useEffect(() => {
+    setLoading(true);
     fetch(`${apiUrl}${searchQ}`)
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
         setRecipes(res.drinks);
+        setLoading(false);
       });
   }, []);
 
@@ -67,6 +70,11 @@ const AllRecipes = () => {
     e.preventDefault();
   }
 
+  const recipePlaceHolders = [];
+  for (let i = 0; i < 9; i++) {
+    recipePlaceHolders.push(<RecipePlaceHolder />);
+  }
+
   return (
     <div className="allrecipes--container">
       <div className="allrecipes--content">
@@ -100,6 +108,7 @@ const AllRecipes = () => {
           </select>
         </form>
         <div className="allrecipes-display">
+          {loading && recipePlaceHolders}
           {currentRecipes &&
             currentRecipes?.map((recipe) => (
               <RecipeThumb
