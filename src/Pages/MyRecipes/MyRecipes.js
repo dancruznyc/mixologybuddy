@@ -3,11 +3,13 @@ import { MyBarContext } from "../../Services/MyBarContext";
 import "./MyRecipes.css";
 import RecipeThumb from "../../Components/RecipeThumb/RecipeThumb";
 import Pagination from "../../Components/Pagination/Pagination";
+import RecipePlaceHolder from "../../Components/RecipePlaceHolder/RecipePlaceHolder";
 
 const MyRecipes = () => {
   const { filteredDrinksList, getMyRecipes } = useContext(MyBarContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage, setRecipesPerPage] = useState(18);
+  const [loading, setLoading] = useState(false);
 
   // Get Current Posts
   const indexOfLastRecipe = currentPage * recipesPerPage;
@@ -26,12 +28,19 @@ const MyRecipes = () => {
   useEffect(() => {
     getMyRecipes();
   }, []);
+
+  const recipePlaceHolders = [];
+  for (let i = 0; i < 9; i++) {
+    recipePlaceHolders.push(<RecipePlaceHolder />);
+  }
+
   return (
     <div className="my-recipes--container">
       <div className="myrecipe--header">
         <h2 className="myrecipe--heading">My Recipes</h2>
       </div>
       <div className="allrecipes-display">
+        {loading && recipePlaceHolders}
         {currentRecipes?.map((recipe) => (
           <RecipeThumb
             key={recipe.idDrink}
