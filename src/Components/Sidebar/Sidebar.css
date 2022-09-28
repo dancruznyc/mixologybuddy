@@ -32,3 +32,12 @@
 .list-span {
   margin-left: 1rem;
 }
+
+.sidebar-icons {
+  color: white;
+  width: 3rem;
+}
+
+.sidebar--container li a svg {
+  width: 3rem;
+}

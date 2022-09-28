@@ -7,6 +7,8 @@ import { BiNews } from "react-icons/bi";
 import { TbListSearch } from "react-icons/tb";
 import { BsListCheck } from "react-icons/bs";
 import { GiShop } from "react-icons/gi";
+import recipeIcon from "../../Assets/BarIcons/recipeicon.svg";
+import allRecipesIcon from "../../Assets/BarIcons/allRecipes.svg";
 
 const Sidebar = () => {
   return (
@@ -22,12 +24,22 @@ const Sidebar = () => {
 
       <li>
         <Link to="/myrecipes">
-          <BsListCheck /> <span className="list-span">My Recipes</span>
+          <img
+            src={recipeIcon}
+            className="sidebar-icons"
+            alt="artist in studio"
+          />
+          <span className="list-span">My Recipes</span>
         </Link>
       </li>
       <li>
         <Link to="/allrecipes">
-          <TbListSearch /> <span className="list-span">All Recipes</span>
+          <img
+            src={allRecipesIcon}
+            className="sidebar-icons"
+            alt="artist in studio"
+          />{" "}
+          <span className="list-span">All Recipes</span>
         </Link>
       </li>
       <li>
