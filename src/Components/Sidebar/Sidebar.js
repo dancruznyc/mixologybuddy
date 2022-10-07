@@ -7,8 +7,11 @@ import { BiNews } from "react-icons/bi";
 import { TbListSearch } from "react-icons/tb";
 import { BsListCheck } from "react-icons/bs";
 import { GiShop } from "react-icons/gi";
-import recipeIcon from "../../Assets/BarIcons/recipeicon.svg";
+import myRecipe from "../../Assets/BarIcons/myRecipe.svg";
 import allRecipesIcon from "../../Assets/BarIcons/allRecipes.svg";
+import barBottlesIcon from "../../Assets/BarIcons/barbottlesicon.svg";
+import newsIcon from "../../Assets/BarIcons/newsicon.svg";
+import allRecipesBookIcon from "../../Assets/BarIcons/allRecipesBook.svg";
 
 const Sidebar = () => {
   return (
@@ -18,14 +21,19 @@ const Sidebar = () => {
       </li>
       <li>
         <Link to="/mybar">
-          <MdLocalBar /> <span className="list-span"> My Bar</span>
+          <img
+            src={barBottlesIcon}
+            className="sidebar-icons"
+            alt="artist in studio"
+          />{" "}
+          <span className="list-span"> My Bar</span>
         </Link>
       </li>
 
       <li>
         <Link to="/myrecipes">
           <img
-            src={recipeIcon}
+            src={myRecipe}
             className="sidebar-icons"
             alt="artist in studio"
           />
@@ -35,10 +43,10 @@ const Sidebar = () => {
       <li>
         <Link to="/allrecipes">
           <img
-            src={allRecipesIcon}
+            src={allRecipesBookIcon}
             className="sidebar-icons"
             alt="artist in studio"
-          />{" "}
+          />
           <span className="list-span">All Recipes</span>
         </Link>
       </li>
@@ -50,7 +58,12 @@ const Sidebar = () => {
       </li>
       <li>
         <Link to="/news">
-          <BiNews /> <span className="list-span">News </span>
+          <img
+            src={newsIcon}
+            className="sidebar-icons"
+            alt="artist in studio"
+          />{" "}
+          <span className="list-span">News </span>
         </Link>
       </li>
       <li>

@@ -1,28 +1,193 @@
 .home--container {
   background-color: #61576b;
   width: calc(100vw - 15rem);
-  height: 100vh;
-  overflow: scroll;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.home--content {
-  padding: 4rem;
-  max-width: 100rem;
+.header--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 11rem;
 }
 
-.advertisement {
+.header--title {
+  font-family: "Fredoka One", cursive;
+  font-size: 5rem;
+}
+.header-image--container {
+  width: 8rem;
+}
+
+.header-image--container img {
   width: 100%;
-  position: relative;
 }
 
-.advertisement-close {
-  position: absolute;
-}
-
-.advertisement img {
+.section-1 {
+  min-height: calc(100vh - 11rem);
+  max-height: calc(100vh - 11rem);
   width: 100%;
+  display: flex;
+  padding: 3rem;
+}
+
+.section-1--left {
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-1--left p {
+  font-size: 8rem;
+}
+
+.section-1--right {
+  width: 40%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-1--right__top {
+  height: 50%;
+  background-image: url("../../Assets/girlbartender.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.section-1--right__bottom {
+  height: 50%;
+}
+
+.section-1--video_container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section-1--video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-2 {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("../../Assets/fruitycocktails.jpeg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-2--content {
+  width: 80rem;
+  height: 40rem;
+
+  display: flex;
+}
+
+.section-2--left {
+  margin-right: 2rem;
+}
+
+.section-2--left,
+.section-2--right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.section-2--left p,
+.section-2--right p {
+  font-size: 3rem;
+}
+
+.section-3 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  padding: 3rem;
+}
+
+.section-3--left {
+  width: 40%;
+}
+
+.section-3--right {
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-3--right_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.section-3--right_container p {
+  font-size: 8rem;
+}
+
+.section-3--left__top,
+.section-3--left__bottom {
+  height: 50%;
+}
+
+.section-3--left__top {
+  background-image: url("../../Assets/servinggirl.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.section-3--video_container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section-3--video_container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-4 {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("../../Assets/friends2.jpeg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-4--content {
+  width: 40rem;
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
 }
