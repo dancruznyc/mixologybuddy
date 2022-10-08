@@ -191,3 +191,7 @@
   align-items: center;
   background-color: rgba(255, 255, 255, 0.7);
 }
+
+.section-4--content p {
+  font-size: 3rem;
+}
