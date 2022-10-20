@@ -18,3 +18,9 @@
   font-size: 4rem;
   margin: 2rem;
 }
+
+@media all and (max-width: 900px) {
+  .my-recipes--container {
+    width: 100vw;
+  }
+}
