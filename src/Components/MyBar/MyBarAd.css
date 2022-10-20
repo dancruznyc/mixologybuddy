@@ -1,5 +1,8 @@
 .mybar-ad--container {
   height: 60%;
+  max-width: 30rem;
+  display: flex;
+  justify-content: center;
 }
 
 .mybar-ad--container img {
