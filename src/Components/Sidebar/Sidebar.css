@@ -6,6 +6,7 @@
   background-color: #48404f;
   color: #ebe6f0;
   position: fixed;
+  transition: all 0.3s ease-in-out;
 }
 
 .sidebar--container li {
@@ -40,4 +41,64 @@
 
 .sidebar--container li a svg {
   width: 3rem;
+}
+
+/* Hamburger CSS */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 3.2rem;
+  width: 3.5rem;
+  cursor: pointer;
+  position: fixed;
+  top: 1.8rem;
+  right: 2rem;
+  transition: all 0.4s ease-in-out;
+  user-select: none;
+}
+
+.hamburger-line {
+  width: 3.5rem;
+  height: 0.3rem;
+  background-color: white;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+}
+
+.hamburger-mid {
+  top: 1.3rem;
+}
+
+.hamburger-bot {
+  top: 2.6rem;
+}
+
+.hamburger-top--active {
+  transform: rotate(135deg);
+  top: 1rem;
+}
+
+.hamburger-mid--active {
+  opacity: 0;
+}
+
+.hamburger-bot--active {
+  transform: rotate(-135deg);
+  top: 1rem;
+}
+
+/* Media Queries */
+
+@media all and (max-width: 900px) {
+  .sidebar--container {
+    transform: translateX(-15rem);
+  }
+  .sidebar--active {
+    transform: translateX(0);
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
 }

@@ -31,3 +31,9 @@ html {
 /* .app-sidebar--container {
   position: relative;
 } */
+
+@media all and (max-width: 900px) {
+  .app--main-content {
+    padding-left: 0;
+  }
+}
