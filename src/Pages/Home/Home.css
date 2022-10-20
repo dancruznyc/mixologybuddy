@@ -195,3 +195,9 @@
 .section-4--content p {
   font-size: 3rem;
 }
+
+@media all and (max-width: 900px) {
+  .home--container {
+    width: 100vw;
+  }
+}

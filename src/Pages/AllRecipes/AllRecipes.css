@@ -60,3 +60,9 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
+@media all and (max-width: 900px) {
+  .allrecipes--container {
+    width: 100vw;
+  }
+}
