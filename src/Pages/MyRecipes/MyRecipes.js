@@ -34,6 +34,21 @@ const MyRecipes = () => {
     recipePlaceHolders.push(<RecipePlaceHolder />);
   }
 
+  let recipeDisplay;
+
+  if (currentRecipes.length > 0) {
+    recipeDisplay = currentRecipes?.map((recipe) => (
+      <RecipeThumb
+        key={recipe.idDrink}
+        thumbnail={recipe.strDrinkThumb}
+        title={recipe.strDrink}
+        id={recipe.idDrink}
+      />
+    ));
+  } else {
+    recipeDisplay = <h2>Please Keep adding ingredients to your bar</h2>;
+  }
+
   return (
     <div className="my-recipes--container">
       <div className="myrecipe--header">
@@ -41,14 +56,7 @@ const MyRecipes = () => {
       </div>
       <div className="allrecipes-display">
         {loading && recipePlaceHolders}
-        {currentRecipes?.map((recipe) => (
-          <RecipeThumb
-            key={recipe.idDrink}
-            thumbnail={recipe.strDrinkThumb}
-            title={recipe.strDrink}
-            id={recipe.idDrink}
-          />
-        ))}
+        {recipeDisplay}
       </div>
       <Pagination
         recipesPerPage={recipesPerPage}
