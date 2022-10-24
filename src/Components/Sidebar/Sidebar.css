@@ -7,6 +7,7 @@
   color: #ebe6f0;
   position: fixed;
   transition: all 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 .sidebar--container li {
