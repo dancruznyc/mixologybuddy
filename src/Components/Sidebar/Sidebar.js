@@ -43,10 +43,12 @@ const Sidebar = () => {
       </div>
       <ul className={`sidebar--container ${sidebarActive}`}>
         <li>
-          <Link to="/">MixologyBuddy</Link>
+          <Link to="/" onClick={hamburgerClick}>
+            MixologyBuddy
+          </Link>
         </li>
         <li>
-          <Link to="/mybar">
+          <Link to="/mybar" onClick={hamburgerClick}>
             <img
               src={barBottlesIcon}
               className="sidebar-icons"
@@ -57,7 +59,7 @@ const Sidebar = () => {
         </li>
 
         <li>
-          <Link to="/myrecipes">
+          <Link to="/myrecipes" onClick={hamburgerClick}>
             <img
               src={myRecipe}
               className="sidebar-icons"
@@ -67,7 +69,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/allrecipes">
+          <Link to="/allrecipes" onClick={hamburgerClick}>
             <img
               src={allRecipesBookIcon}
               className="sidebar-icons"
@@ -77,13 +79,13 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/favorites">
+          <Link to="/favorites" onClick={hamburgerClick}>
             <FaHeart />
             <span className="list-span"> Favorites</span>
           </Link>
         </li>
         <li>
-          <Link to="/news">
+          <Link to="/news" onClick={hamburgerClick}>
             <img
               src={newsIcon}
               className="sidebar-icons"
@@ -93,7 +95,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to="sales">
+          <Link to="sales" onClick={hamburgerClick}>
             <GiShop /> <span className="list-span"> Sales</span>
           </Link>
         </li>
