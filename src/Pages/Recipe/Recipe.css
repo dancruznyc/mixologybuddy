@@ -5,7 +5,6 @@
   min-height: 100vh;
   display: flex;
   padding: 2rem;
-  justify-content: center;
 }
 
 .recipe-img--container {
@@ -64,4 +63,34 @@
   .recipe--container {
     width: 100vw;
   }
+}
+
+@media all and (max-width: 600px) {
+  .recipe--container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .recipe-display--left {
+    width: 30rem;
+  } */
+
+  .recipe-display--right {
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* .recipe-ingredients {
+    width: 90%;
+  }
+
+  .ingredient-item {
+    width: 90%;
+  } */
+}
+
+@media all and (max-width: 500px) {
 }

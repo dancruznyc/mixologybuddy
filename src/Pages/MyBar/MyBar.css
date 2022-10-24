@@ -2,6 +2,7 @@
   background-color: #61576b;
   width: calc(100vw - 15rem);
   height: 100vh;
+  display: flex;
 }
 
 .mybar--margin-container {
@@ -42,10 +43,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 40rem;
 }
 
 @media all and (max-width: 900px) {
   .mybar--container {
     width: 100vw;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .mybar--display {
+    flex-direction: column;
+  }
+
+  .mybar--container {
+    height: min-content;
+    justify-content: center;
   }
 }
