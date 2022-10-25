@@ -264,4 +264,20 @@
   .header-image--container {
     width: 5rem;
   }
+
+  .section-1--left {
+    padding: 3rem 0;
+  }
+
+  .section-1--left p {
+    font-size: 4rem;
+  }
+
+  .section-3--right_container {
+    padding: 3rem 0;
+  }
+
+  .section-3--right_container p {
+    font-size: 4rem;
+  }
 }
