@@ -3,6 +3,7 @@
   width: calc(100vw - 15rem);
   height: 100vh;
   display: flex;
+  justify-content: center;
 }
 
 .mybar--margin-container {
