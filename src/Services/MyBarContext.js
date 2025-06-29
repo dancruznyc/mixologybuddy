@@ -21,7 +21,8 @@ export const MyBarContextProvider = ({ children }) => {
         });
         setIngredients(ingredientsArray);
         console.log(ingredientsArray);
-      });
+      })
+      .catch((err) => console.error("Error fetching ingredients", err));
   }
 
   function myBarLoader() {
@@ -85,18 +86,43 @@ export const MyBarContextProvider = ({ children }) => {
   //=================================================================================
   //This function gets data from all drinks and returns a simplified version of that data
   // that includes all ingredients
-  // This function is called on line 66
-  async function transformRecipeData(data) {
-    // data.forEach((item) => console.log(item));
-    const allDrinkData = data.map(async (drink) => {
-      return await fetch(
-        `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${drink.idDrink}`
-      )
-        .then((res) => res.json())
-        .catch((error) => console.log(error));
-    });
+  // This function is called on line 62
+  // async function transformRecipeData(data) {
+  //   // data.forEach((item) => console.log(item));
+  //   const allDrinkData = data.map(async (drink) => {
+  //     return await fetch(
+  //       `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${drink.idDrink}`
+  //     )
+  //       .then((res) => res.json())
+  //       .catch((error) => console.log(error));
+  //   });
 
-    return await Promise.all(allDrinkData);
+  //   return await Promise.all(allDrinkData);
+  // }
+
+  function delay(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function transformRecipeData(data) {
+    const result = [];
+
+    for (const drink of data) {
+      try {
+        const res = await fetch(
+          `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${drink.idDrink}`
+        );
+        const json = await res.json();
+        result.push(json);
+      } catch (err) {
+        console.error("Fetch failed:", err);
+      }
+
+      // Wait 300ms between requests to avoid 429
+      await delay(300);
+    }
+    console.log(result);
+    return result;
   }
   //=================================================================================
   //This function checks all drinks to see if the user has all the proper ingredients
